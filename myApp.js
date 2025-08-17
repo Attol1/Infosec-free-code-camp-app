@@ -2,7 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const app = express();
 
-app.use(helmet.hidePoweredBy({ setTo: "PHP 4.2.0" }));
+app.use(helmet.hidePoweredBy());
 
 
 
@@ -48,12 +48,7 @@ app.use(helmet.hidePoweredBy({ setTo: "PHP 4.2.0" }));
 
 
 
-
-
-
-
-
-
+module.exports = app;
 const api = require('./server.js');
 app.use(express.static('public'));
 app.disable('strict-transport-security');
@@ -66,4 +61,3 @@ app.listen(port, () => {
   console.log(`Useful Programmer Info Security App Started on port ${port}`);
 });
 
-module.exports = app;
