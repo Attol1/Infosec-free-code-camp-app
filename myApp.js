@@ -8,15 +8,11 @@ app.use(helmet.xssFilter({}));
 app.use(helmet.noSniff());
 app.use(helmet.ieNoOpen());
 
-
-
-
-
-
-
-
-
-
+var ninetydaysinseconds = 90 * 24 * 60 * 60;
+app.use(helmet.hsts({
+  maxAge:
+    ninetydaysinseconds, force: true
+}));
 
 
 
