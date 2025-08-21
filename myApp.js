@@ -14,6 +14,9 @@ app.use(helmet.hsts({
     ninetydaysinseconds, force: true
 }));
 
+app.use(helmet.dnsPrefetchControl());
+
+
 
 
 
